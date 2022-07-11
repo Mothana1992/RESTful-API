@@ -28,7 +28,8 @@ public class EmployeeController {
 
 
     /**
-     *
+     * Einbindung einer zweiten Datenquelle
+     * durch @Value wird, die in application.properties gespeicherte Urls hinzugefügt
      */
     @Value("${countries.url}")
     private String country;
