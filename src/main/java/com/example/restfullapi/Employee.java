@@ -17,6 +17,17 @@ public class Employee {
     Employee() {
     }
 
+    /**
+     *  Employee konstruktor
+     * @param createdAt
+     * @param firstName
+     * @param lastName
+     * @param jobTitle
+     * @param startedAt
+     * @param leftAt
+     * @param email
+     * @param id
+     */
     Employee(Date createdAt, String firstName, String lastName, String jobTitle, Date startedAt, Date leftAt, String email, Long id) {
 
         this.createdAt = createdAt;
@@ -94,9 +105,9 @@ public class Employee {
     }
 
     /**
-     *
+     * Zwei Employee Objekte vergleichen
      * @param o
-     * @return
+     * @return true, falls die Employee Objekte sind gleich
      */
     @Override
     public boolean equals(Object o) {
@@ -104,25 +115,39 @@ public class Employee {
         if (this == o) return true;
         if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(this.createdAt, employee.createdAt) && Objects.equals(this.firstName, employee.firstName) && Objects.equals(this.lastName, employee.lastName) && Objects.equals(this.jobTitle, employee.jobTitle) && Objects.equals(this.startedAt, employee.startedAt) && Objects.equals(this.leftAt, employee.leftAt) && Objects.equals(this.email, employee.email) && Objects.equals(this.id, employee.id);
+        return Objects.equals(this.createdAt, employee.createdAt)
+                && Objects.equals(this.firstName, employee.firstName)
+                && Objects.equals(this.lastName, employee.lastName)
+                && Objects.equals(this.jobTitle, employee.jobTitle)
+                && Objects.equals(this.startedAt, employee.startedAt)
+                && Objects.equals(this.leftAt, employee.leftAt)
+                && Objects.equals(this.email, employee.email)
+                && Objects.equals(this.id, employee.id);
     }
 
     /**
      *
-     * @return
+     * @return hashCode ein Employee Objekt
      */
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.firstName, this.lastName, this.jobTitle);
+        return Objects.hash( this.createdAt,this.firstName, this.lastName, this.jobTitle, this.startedAt, this.leftAt, this.email,this.id);
     }
 
     /**
      *
-     * @return
+     * @return das Employee Objekt als String in Json Format
      */
     @Override
     public String toString() {
-        return "Employee{" + "id=" + this.id + ", firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName + '\'' + ", role='" + this.jobTitle + '\'' + '}';
+        return "Employee{" + "createdAt=" + this.createdAt
+                + ", firstName='" + this.firstName
+                + '\'' + ", lastName='" + this.lastName
+                + '\'' + ", jobTitle='" + this.jobTitle
+                + '\'' + ", startedAt'" + this.startedAt
+                + '\'' + ", leftAt'" + this.leftAt
+                + '\'' + ", email'" + this.email
+                +'\'' + ", id'" + this.id + '}';
     }
 
 }

@@ -11,6 +11,11 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
+    /**
+     * Employee Daten aus external api Quelle in list packen
+     * die liste
+     */
+
     @Value("${employee.url}")
     private String employee;
     @GetMapping("/employee")
